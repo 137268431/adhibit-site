@@ -45,9 +45,8 @@ html {
 body {
   margin: 0;
   background:
-    linear-gradient(120deg, rgba(37, 185, 215, 0.12), transparent 30%),
-    linear-gradient(300deg, rgba(105, 84, 248, 0.12), transparent 36%),
-    linear-gradient(180deg, rgba(73, 104, 243, 0.10), transparent 640px),
+    linear-gradient(180deg, #dcebf8 0, #eef5fb 360px, var(--paper) 860px),
+    repeating-linear-gradient(90deg, rgba(73, 104, 243, 0.055) 0 1px, transparent 1px 120px),
     var(--paper);
   color: var(--ink);
   line-height: 1.55;
@@ -194,40 +193,40 @@ main {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 92vh;
-  padding: 112px 24px 70px;
+  min-height: 94vh;
+  padding: 112px 24px 78px;
   isolation: isolate;
 }
 
 .hero::before {
   position: absolute;
-  inset: 88px 24px 42px;
+  inset: 82px 0 34px;
   z-index: -3;
-  border-radius: 16px;
+  border-radius: 0 0 18px 18px;
   background:
-    linear-gradient(115deg, rgba(73, 104, 243, 0.22), transparent 26%),
-    linear-gradient(245deg, rgba(37, 185, 215, 0.18), transparent 30%),
-    repeating-linear-gradient(90deg, rgba(16, 21, 34, 0.06) 0 1px, transparent 1px 82px);
+    linear-gradient(118deg, rgba(81, 110, 255, 0.42), transparent 34%),
+    linear-gradient(242deg, rgba(37, 185, 215, 0.30), transparent 38%),
+    linear-gradient(180deg, #07101f 0%, #0a1326 48%, #121b38 100%);
   content: "";
-  animation: gridShift 12s linear infinite;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 34px 120px rgba(21, 32, 58, 0.20);
 }
 
 .hero::after {
   position: absolute;
   inset: auto 0 0;
   z-index: -1;
-  height: 30%;
-  background: linear-gradient(180deg, transparent, var(--paper));
+  height: 24%;
+  background: linear-gradient(180deg, transparent, #eaf3fb 68%, var(--paper));
   content: "";
 }
 
 .hero-image {
   position: absolute;
-  inset: 88px 24px 42px;
+  inset: 82px 0 34px;
   z-index: -2;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
+  border: 0;
+  border-radius: 0 0 18px 18px;
+  box-shadow: none;
   overflow: hidden;
   transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
   transition: transform 180ms ease;
@@ -235,30 +234,39 @@ main {
 
 .hero-image::before {
   position: absolute;
-  inset: -2px;
+  inset: 0;
   z-index: 2;
   border-radius: inherit;
-  background: linear-gradient(120deg, transparent 0 28%, rgba(255, 255, 255, 0.42), transparent 48% 100%);
+  background:
+    linear-gradient(110deg, transparent 0 32%, rgba(132, 224, 255, 0.23), transparent 46% 100%),
+    linear-gradient(90deg, transparent 0 54%, rgba(73, 104, 243, 0.24) 54.2%, transparent 54.5% 100%);
   content: "";
-  mix-blend-mode: soft-light;
+  mix-blend-mode: screen;
   transform: translateX(-80%);
-  animation: sheen 7s ease-in-out infinite;
+  animation: sheen 8s ease-in-out infinite;
 }
 
 .hero-image::after {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(247, 249, 253, 0.96), rgba(247, 249, 253, 0.76) 42%, rgba(247, 249, 253, 0.08)),
-    linear-gradient(180deg, rgba(247, 249, 253, 0.04), rgba(247, 249, 253, 0.70));
+    linear-gradient(90deg, rgba(7, 16, 31, 0.92) 0%, rgba(7, 16, 31, 0.76) 42%, rgba(8, 14, 28, 0.90) 100%),
+    linear-gradient(180deg, rgba(37, 185, 215, 0.16), rgba(12, 21, 43, 0.66) 46%, rgba(247, 249, 253, 0.10) 100%),
+    repeating-linear-gradient(90deg, rgba(140, 233, 255, 0.14) 0 1px, transparent 1px 84px),
+    repeating-linear-gradient(0deg, rgba(140, 233, 255, 0.10) 0 1px, transparent 1px 72px),
+    repeating-linear-gradient(135deg, transparent 0 34px, rgba(73, 104, 243, 0.16) 34px 35px, transparent 35px 92px);
   content: "";
+  animation: gridShift 18s linear infinite;
 }
 
 @media (prefers-color-scheme: dark) {
   .hero-image::after {
     background:
-      linear-gradient(90deg, rgba(11, 16, 24, 0.96), rgba(11, 16, 24, 0.72) 42%, rgba(11, 16, 24, 0.12)),
-      linear-gradient(180deg, rgba(11, 16, 24, 0.08), rgba(11, 16, 24, 0.76));
+      linear-gradient(90deg, rgba(7, 16, 31, 0.94) 0%, rgba(7, 16, 31, 0.78) 42%, rgba(8, 14, 28, 0.90) 100%),
+      linear-gradient(180deg, rgba(37, 185, 215, 0.16), rgba(12, 21, 43, 0.70) 48%, rgba(11, 16, 24, 0.20) 100%),
+      repeating-linear-gradient(90deg, rgba(140, 233, 255, 0.14) 0 1px, transparent 1px 84px),
+      repeating-linear-gradient(0deg, rgba(140, 233, 255, 0.10) 0 1px, transparent 1px 72px),
+      repeating-linear-gradient(135deg, transparent 0 34px, rgba(73, 104, 243, 0.16) 34px 35px, transparent 35px 92px);
   }
 }
 
@@ -267,12 +275,17 @@ main {
   height: 100%;
   object-fit: cover;
   object-position: left top;
+  opacity: 0.54;
+  filter: saturate(1.24) contrast(1.08) brightness(0.82);
   animation: heroDrift 16s ease-in-out infinite alternate;
 }
 
 .hero-copy {
+  position: relative;
+  z-index: 2;
   width: min(1120px, 100%);
-  padding-top: 42px;
+  padding-top: 72px;
+  color: #f8fbff;
 }
 
 .eyebrow {
@@ -294,9 +307,18 @@ p {
 h1 {
   max-width: 780px;
   margin-bottom: 18px;
+  color: #f8fbff;
   font-size: clamp(64px, 16vw, 168px);
   line-height: 0.86;
   letter-spacing: 0;
+}
+
+.hero h1 {
+  background: linear-gradient(95deg, #ffffff 0%, #e9f7ff 44%, #82e9ff 86%);
+  background-clip: text;
+  text-shadow: 0 18px 70px rgba(37, 185, 215, 0.22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -328,15 +350,16 @@ p {
 }
 
 .hero-lede {
-  width: min(620px, 100%);
+  width: min(580px, 100%);
   margin-bottom: 28px;
-  color: color-mix(in srgb, var(--ink) 78%, var(--muted));
+  color: rgba(248, 251, 255, 0.86);
   font-size: clamp(20px, 2.4vw, 28px);
   line-height: 1.22;
+  text-shadow: 0 14px 46px rgba(0, 0, 0, 0.24);
 }
 
 [data-language="zh"] .hero-lede {
-  width: min(720px, 100%);
+  width: min(580px, 100%);
 }
 
 .hero-actions {
@@ -354,10 +377,10 @@ p {
 .hero-badges span {
   min-height: 32px;
   padding: 6px 12px;
-  border: 1px solid color-mix(in srgb, var(--blue) 28%, var(--line));
+  border: 1px solid rgba(140, 233, 255, 0.42);
   border-radius: 8px;
-  background: color-mix(in srgb, var(--surface) 74%, transparent);
-  color: color-mix(in srgb, var(--ink) 82%, var(--blue));
+  background: rgba(9, 18, 34, 0.48);
+  color: #dff8ff;
   font-size: 13px;
   font-weight: 900;
   backdrop-filter: blur(20px);
@@ -405,9 +428,22 @@ p {
   backdrop-filter: blur(18px);
 }
 
+.hero .primary-action {
+  background: linear-gradient(135deg, #f7fbff 0%, #8ee9ff 50%, #5570ff 100%);
+  color: #07101f;
+  box-shadow: 0 18px 50px rgba(37, 185, 215, 0.26);
+}
+
+.hero .secondary-action {
+  border-color: rgba(230, 244, 255, 0.28);
+  background: rgba(8, 16, 32, 0.50);
+  color: #eef7ff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
 .release-note {
   margin-top: 12px;
-  color: color-mix(in srgb, var(--muted) 80%, var(--blue));
+  color: rgba(187, 223, 255, 0.84);
   font-size: 13px;
   font-weight: 700;
 }
@@ -417,10 +453,10 @@ p {
   right: max(24px, calc((100vw - 1120px) / 2));
   bottom: 54px;
   width: min(430px, calc(100vw - 48px));
-  border: 1px solid var(--line);
+  border: 1px solid rgba(140, 233, 255, 0.42);
   border-radius: 8px;
-  background: color-mix(in srgb, var(--surface) 92%, transparent);
-  box-shadow: var(--shadow);
+  background: rgba(7, 16, 31, 0.78);
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.34), 0 0 46px rgba(37, 185, 215, 0.14);
   overflow: hidden;
   backdrop-filter: blur(22px);
   animation: panelFloat 6s ease-in-out infinite;
@@ -446,7 +482,9 @@ p {
   align-items: center;
   min-height: 44px;
   padding: 0 14px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(140, 233, 255, 0.24);
+  background: rgba(248, 251, 255, 0.08);
+  color: #f8fbff;
 }
 
 .panel-head span {
@@ -457,8 +495,12 @@ p {
 }
 
 .panel-head small {
-  color: var(--muted);
+  color: rgba(232, 242, 255, 0.76);
   font-weight: 800;
+}
+
+.quick-panel img {
+  opacity: 0.94;
 }
 
 .motion-strip {
