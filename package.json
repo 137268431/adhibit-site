@@ -1,0 +1,19 @@
+{
+  "name": "adhibit-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public product and support site for Adhibit.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node --check src/main.js && node --check scripts/build.mjs"
+  },
+  "keywords": [
+    "adhibit",
+    "macos",
+    "clipboard",
+    "support"
+  ],
+  "author": "Adhibit",
+  "license": "UNLICENSED"
+}
