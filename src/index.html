@@ -8,190 +8,196 @@
   <!-- styles -->
 </head>
 <body>
-  <header class="site-nav" aria-label="Primary navigation">
-    <a class="brand" href="#top" aria-label="Adhibit home">
+  <header class="site-nav" aria-label="Primary navigation" data-i18n-attrs="aria-label:nav.primary">
+    <a class="brand" href="#top" aria-label="Adhibit home" data-i18n-attrs="aria-label:brand.aria">
       <img src="assets/adhibit-icon.png" alt="">
       <span>Adhibit</span>
     </a>
     <nav>
-      <a href="#library">Library</a>
-      <a href="#pinboards">Pinboards</a>
-      <a href="#pro">Pro</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#support">Support</a>
+      <a href="#library" data-i18n="nav.library">Library</a>
+      <a href="#pinboards" data-i18n="nav.pinboards">Pinboards</a>
+      <a href="#pro" data-i18n="nav.pro">Pro</a>
+      <a href="#privacy" data-i18n="nav.privacy">Privacy</a>
+      <a href="#support" data-i18n="nav.support">Support</a>
     </nav>
-    <a class="nav-action" href="https://apps.apple.com/app/id6766882201" target="_blank" rel="noopener">App Store</a>
+    <div class="nav-utilities">
+      <div class="language-switcher" aria-label="Language" data-i18n-attrs="aria-label:language.label">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+      <a class="nav-action" href="https://apps.apple.com/app/id6766882201" target="_blank" rel="noopener" data-i18n="nav.appstore">App Store</a>
+    </div>
   </header>
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-image" data-tilt>
-        <img src="assets/library.jpg" alt="Adhibit library showing searchable clipboard clips on macOS.">
+        <img src="assets/library.jpg" alt="Adhibit library showing searchable clipboard clips on macOS." data-i18n-attrs="alt:image.libraryHero">
       </div>
       <div class="hero-copy">
-        <p class="eyebrow">Portable clipboard memory for macOS</p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Portable clipboard memory for macOS</p>
         <h1 id="hero-title">Adhibit</h1>
-        <p class="hero-lede">Keep text, links, images, files, and colors within reach from a fast, private clipboard library built for Mac.</p>
-        <div class="hero-badges" aria-label="Adhibit highlights">
-          <span>Local-first</span>
-          <span>Menu bar ready</span>
-          <span>Pro unlocks actions</span>
+        <p class="hero-lede" data-i18n="hero.lede">Keep text, links, images, files, and colors within reach from a fast, private clipboard library built for Mac.</p>
+        <div class="hero-badges" aria-label="Adhibit highlights" data-i18n-attrs="aria-label:hero.badgesAria">
+          <span data-i18n="hero.badge.local">Local-first</span>
+          <span data-i18n="hero.badge.menu">Menu bar ready</span>
+          <span data-i18n="hero.badge.pro">Pro unlocks actions</span>
         </div>
         <div class="hero-actions">
-          <a class="primary-action" href="https://apps.apple.com/app/id6766882201" target="_blank" rel="noopener">View on App Store</a>
-          <a class="secondary-action" href="#library">Explore Features</a>
+          <a class="primary-action" href="https://apps.apple.com/app/id6766882201" target="_blank" rel="noopener" data-i18n="hero.cta.appstore">View on App Store</a>
+          <a class="secondary-action" href="#library" data-i18n="hero.cta.features">Explore Features</a>
         </div>
-        <p class="release-note">App Store page becomes available after Apple review approval.</p>
+        <p class="release-note" data-i18n="hero.releaseNote">App Store page becomes available after Apple review approval.</p>
       </div>
-      <div class="quick-panel" aria-label="Portable history panel preview">
+      <div class="quick-panel" aria-label="Portable history panel preview" data-i18n-attrs="aria-label:quickPanel.aria">
         <div class="panel-head">
           <span></span>
-          <strong>Portable Panel</strong>
+          <strong data-i18n="quickPanel.title">Portable Panel</strong>
           <small>Shift-Command-V</small>
         </div>
-        <img src="assets/history-panel.jpg" alt="Adhibit portable history panel floating above the desktop.">
+        <img src="assets/history-panel.jpg" alt="Adhibit portable history panel floating above the desktop." data-i18n-attrs="alt:image.historyPanel">
       </div>
     </section>
 
-    <section class="motion-strip" aria-label="Clipboard item types">
+    <section class="motion-strip" aria-label="Clipboard item types" data-i18n-attrs="aria-label:ticker.aria">
       <div class="ticker">
-        <span>Text clips</span>
-        <span>Links</span>
-        <span>Screenshots</span>
-        <span>Files</span>
-        <span>Colors</span>
-        <span>Reusable snippets</span>
-        <span>Privacy rules</span>
-        <span>Pinboards</span>
-        <span>Monthly Pro</span>
-        <span>Lifetime unlock</span>
+        <span data-i18n="ticker.text">Text clips</span>
+        <span data-i18n="ticker.links">Links</span>
+        <span data-i18n="ticker.screenshots">Screenshots</span>
+        <span data-i18n="ticker.files">Files</span>
+        <span data-i18n="ticker.colors">Colors</span>
+        <span data-i18n="ticker.snippets">Reusable snippets</span>
+        <span data-i18n="ticker.privacy">Privacy rules</span>
+        <span data-i18n="ticker.pinboards">Pinboards</span>
+        <span data-i18n="ticker.monthly">Monthly Pro</span>
+        <span data-i18n="ticker.lifetime">Lifetime unlock</span>
       </div>
     </section>
 
     <section class="split-section" id="library">
       <div class="section-copy reveal">
-        <p class="eyebrow">Searchable history</p>
-        <h2>Find the thing you copied without breaking your flow.</h2>
-        <p>Adhibit keeps recent clips browsable and searchable, so you can recover a URL, screenshot, file reference, color, or message without hunting through old windows.</p>
+        <p class="eyebrow" data-i18n="library.eyebrow">Searchable history</p>
+        <h2 data-i18n="library.title">Find the thing you copied without breaking your flow.</h2>
+        <p data-i18n="library.body">Adhibit keeps recent clips browsable and searchable, so you can recover a URL, screenshot, file reference, color, or message without hunting through old windows.</p>
       </div>
       <div class="screen-frame reveal" data-tilt>
-        <img src="assets/library.jpg" alt="All Clips library with search, filters, and clip cards.">
+        <img src="assets/library.jpg" alt="All Clips library with search, filters, and clip cards." data-i18n-attrs="alt:image.library">
       </div>
     </section>
 
-    <section class="feature-grid" aria-label="Core features">
+    <section class="feature-grid" aria-label="Core features" data-i18n-attrs="aria-label:features.aria">
       <article class="feature-card reveal">
         <span class="feature-mark blue"></span>
-        <h3>Menu bar access</h3>
-        <p>Open your recent clipboard from anywhere and preview clips before using them again.</p>
+        <h3 data-i18n="features.menu.title">Menu bar access</h3>
+        <p data-i18n="features.menu.body">Open your recent clipboard from anywhere and preview clips before using them again.</p>
       </article>
       <article class="feature-card reveal">
         <span class="feature-mark green"></span>
-        <h3>Quick paste</h3>
-        <p>Use keyboard shortcuts for the first nine clips, including plain-text paste when formatting gets in the way.</p>
+        <h3 data-i18n="features.quick.title">Quick paste</h3>
+        <p data-i18n="features.quick.body">Use keyboard shortcuts for the first nine clips, including plain-text paste when formatting gets in the way.</p>
       </article>
       <article class="feature-card reveal">
         <span class="feature-mark amber"></span>
-        <h3>Manual saves</h3>
-        <p>Create reusable text clips directly for notes, replies, templates, and fragments you use often.</p>
+        <h3 data-i18n="features.manual.title">Manual saves</h3>
+        <p data-i18n="features.manual.body">Create reusable text clips directly for notes, replies, templates, and fragments you use often.</p>
       </article>
     </section>
 
     <section class="split-section reverse" id="pinboards">
       <div class="section-copy reveal">
-        <p class="eyebrow">Pinboards</p>
-        <h2>Turn clipboard history into a reusable workspace.</h2>
-        <p>Pinboards keep important clips grouped by task or project. Drag items into boards, search them later, and keep high-value material ready to paste.</p>
+        <p class="eyebrow" data-i18n="pinboards.eyebrow">Pinboards</p>
+        <h2 data-i18n="pinboards.title">Turn clipboard history into a reusable workspace.</h2>
+        <p data-i18n="pinboards.body">Pinboards keep important clips grouped by task or project. Drag items into boards, search them later, and keep high-value material ready to paste.</p>
       </div>
-      <div class="screen-stack reveal" aria-label="Adhibit Pinboards and settings screenshots">
-        <img class="stack-main" src="assets/pinboards.jpg" alt="Adhibit Pinboards organizing clips into boards.">
-        <img class="stack-float" src="assets/settings.jpg" alt="Adhibit Settings showing capture and privacy configuration.">
+      <div class="screen-stack reveal" aria-label="Adhibit Pinboards and settings screenshots" data-i18n-attrs="aria-label:pinboards.screensAria">
+        <img class="stack-main" src="assets/pinboards.jpg" alt="Adhibit Pinboards organizing clips into boards." data-i18n-attrs="alt:image.pinboards">
+        <img class="stack-float" src="assets/settings.jpg" alt="Adhibit Settings showing capture and privacy configuration." data-i18n-attrs="alt:image.settings">
       </div>
     </section>
 
     <section class="pro-band" id="pro">
       <div class="pro-copy reveal">
-        <p class="eyebrow">Adhibit Pro</p>
-        <h2>Browse everything. Unlock power when you are ready.</h2>
-        <p>Adhibit keeps the full product visible without a subscription: library, portable panel, Pinboards, privacy rules, settings, and the unlock screen all remain explorable. Pro is required when you use capture, paste, organize, import, or sync actions.</p>
-        <a class="primary-action light" href="https://apps.apple.com/app/id6766882201" target="_blank" rel="noopener">Open App Store Page</a>
+        <p class="eyebrow" data-i18n="pro.eyebrow">Adhibit Pro</p>
+        <h2 data-i18n="pro.title">Browse everything. Unlock power when you are ready.</h2>
+        <p data-i18n="pro.body">Adhibit keeps the full product visible without a subscription: library, portable panel, Pinboards, privacy rules, settings, and the unlock screen all remain explorable. Pro is required when you use capture, paste, organize, import, or sync actions.</p>
+        <a class="primary-action light" href="https://apps.apple.com/app/id6766882201" target="_blank" rel="noopener" data-i18n="pro.cta">Open App Store Page</a>
       </div>
-      <div class="pricing-deck reveal" aria-label="Adhibit Pro options">
+      <div class="pricing-deck reveal" aria-label="Adhibit Pro options" data-i18n-attrs="aria-label:pro.optionsAria">
         <article class="price-card monthly">
           <div>
-            <p class="price-label">Subscription</p>
-            <h3>Monthly Pro</h3>
-            <p>Use Pro features with a renewable monthly plan. Great for trying Adhibit in a real workflow.</p>
+            <p class="price-label" data-i18n="pro.monthly.label">Subscription</p>
+            <h3 data-i18n="pro.monthly.title">Monthly Pro</h3>
+            <p data-i18n="pro.monthly.body">Use Pro features with a renewable monthly plan. Great for trying Adhibit in a real workflow.</p>
           </div>
-          <strong>Shown in App Store</strong>
+          <strong data-i18n="pro.monthly.note">Shown in App Store</strong>
         </article>
         <article class="price-card lifetime">
           <div>
-            <p class="price-label">One-time unlock</p>
-            <h3>Lifetime</h3>
-            <p>Pay once to unlock Pro permanently on your Apple ID, with regional pricing handled by Apple.</p>
+            <p class="price-label" data-i18n="pro.lifetime.label">One-time unlock</p>
+            <h3 data-i18n="pro.lifetime.title">Lifetime</h3>
+            <p data-i18n="pro.lifetime.body">Pay once to unlock Pro permanently on your Apple ID, with regional pricing handled by Apple.</p>
           </div>
-          <strong>$29.99 base</strong>
+          <strong data-i18n="pro.lifetime.note">$29.99 base</strong>
         </article>
         <article class="price-card included">
           <div>
-            <p class="price-label">Free to inspect</p>
-            <h3>Visible Features</h3>
-            <p>See settings, privacy controls, support notes, and subscription options before unlocking.</p>
+            <p class="price-label" data-i18n="pro.visible.label">Free to inspect</p>
+            <h3 data-i18n="pro.visible.title">Visible Features</h3>
+            <p data-i18n="pro.visible.body">See settings, privacy controls, support notes, and subscription options before unlocking.</p>
           </div>
-          <strong>No account required</strong>
+          <strong data-i18n="pro.visible.note">No account required</strong>
         </article>
       </div>
       <div class="pro-screen reveal" data-tilt>
-        <img src="assets/pro.jpg" alt="Adhibit Pro unlock screen showing subscription and lifetime options.">
+        <img src="assets/pro.jpg" alt="Adhibit Pro unlock screen showing subscription and lifetime options." data-i18n-attrs="alt:image.pro">
       </div>
     </section>
 
     <section class="privacy-band" id="privacy">
       <div class="privacy-copy reveal">
-        <p class="eyebrow">Local-first by default</p>
-        <h2>Private clipboard tools should be understandable.</h2>
-        <p>No account is required. Clipboard data stays on your Mac unless you enable optional sync or import features. Privacy rules and retention controls are visible in Settings.</p>
+        <p class="eyebrow" data-i18n="privacy.eyebrow">Local-first by default</p>
+        <h2 data-i18n="privacy.title">Private clipboard tools should be understandable.</h2>
+        <p data-i18n="privacy.body">No account is required. Clipboard data stays on your Mac unless you enable optional sync or import features. Privacy rules and retention controls are visible in Settings.</p>
       </div>
       <div class="privacy-screens reveal">
-        <img src="assets/privacy.jpg" alt="Privacy rules in Adhibit settings.">
-        <img src="assets/pro.jpg" alt="Adhibit Pro unlock screen with subscription and lifetime options.">
+        <img src="assets/privacy.jpg" alt="Privacy rules in Adhibit settings." data-i18n-attrs="alt:image.privacy">
+        <img src="assets/pro.jpg" alt="Adhibit Pro unlock screen with subscription and lifetime options." data-i18n-attrs="alt:image.proShort">
       </div>
     </section>
 
     <section class="support-section" id="support">
       <div class="support-card reveal">
         <div>
-          <p class="eyebrow">Support</p>
-          <h2>Need help with Adhibit?</h2>
-          <p>Email your macOS version, Adhibit version, and what you were trying to do. You can also jump to the App Store product page from here once the review is approved.</p>
+          <p class="eyebrow" data-i18n="support.eyebrow">Support</p>
+          <h2 data-i18n="support.title">Need help with Adhibit?</h2>
+          <p data-i18n="support.body">Email your macOS version, Adhibit version, and what you were trying to do. You can also jump to the App Store product page from here once the review is approved.</p>
         </div>
         <div class="support-actions">
           <a class="mail-button" href="mailto:137268431@qq.com">137268431@qq.com</a>
-          <a class="store-button" href="https://apps.apple.com/app/id6766882201" target="_blank" rel="noopener">View on App Store</a>
+          <a class="store-button" href="https://apps.apple.com/app/id6766882201" target="_blank" rel="noopener" data-i18n="support.appstore">View on App Store</a>
         </div>
       </div>
 
       <div class="faq-grid">
         <article class="faq-item reveal">
-          <h3>Can I see features without Pro?</h3>
-          <p>Yes. Library, history panel, Pinboards, privacy rules, settings, and unlock options remain visible. Pro is required when using capture, paste, organize, import, or sync actions.</p>
+          <h3 data-i18n="faq.visible.title">Can I see features without Pro?</h3>
+          <p data-i18n="faq.visible.body">Yes. Library, history panel, Pinboards, privacy rules, settings, and unlock options remain visible. Pro is required when using capture, paste, organize, import, or sync actions.</p>
         </article>
         <article class="faq-item reveal">
-          <h3>Why does direct paste ask for permission?</h3>
-          <p>macOS requires Accessibility access before an app can insert content into another app. Without it, Adhibit copies clips back to the system clipboard first.</p>
+          <h3 data-i18n="faq.permission.title">Why does direct paste ask for permission?</h3>
+          <p data-i18n="faq.permission.body">macOS requires Accessibility access before an app can insert content into another app. Without it, Adhibit copies clips back to the system clipboard first.</p>
         </article>
         <article class="faq-item reveal">
-          <h3>Does Adhibit need an account?</h3>
-          <p>No. The app is designed to work local-first. Optional iCloud sync and Paste import are user-initiated features.</p>
+          <h3 data-i18n="faq.account.title">Does Adhibit need an account?</h3>
+          <p data-i18n="faq.account.body">No. The app is designed to work local-first. Optional iCloud sync and Paste import are user-initiated features.</p>
         </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <span>Copyright © 2026 Adhibit.</span>
-    <a href="mailto:137268431@qq.com">Support</a>
+    <span data-i18n="footer.copy">Copyright © 2026 Adhibit.</span>
+    <a href="mailto:137268431@qq.com" data-i18n="footer.support">Support</a>
   </footer>
 
   <!-- scripts -->
