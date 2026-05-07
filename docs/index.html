@@ -530,6 +530,7 @@ p {
 
 .split-section,
 .privacy-band,
+.subscription-band,
 .support-section {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto 96px;
@@ -643,6 +644,120 @@ p {
   border: 1px solid rgba(232, 240, 255, 0.22);
   border-radius: 8px;
   box-shadow: 0 36px 100px rgba(0, 0, 0, 0.42);
+}
+
+.subscription-band {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(420px, 1.28fr);
+  gap: 28px;
+  align-items: stretch;
+  padding: 42px;
+  border: 1px solid color-mix(in srgb, var(--blue) 22%, var(--line));
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(73, 104, 243, 0.14), transparent 36%),
+    linear-gradient(315deg, rgba(37, 185, 215, 0.12), transparent 42%),
+    color-mix(in srgb, var(--surface) 88%, transparent);
+  box-shadow: 0 28px 90px rgba(25, 35, 58, 0.12);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.subscription-band::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    repeating-linear-gradient(90deg, rgba(73, 104, 243, 0.08) 0 1px, transparent 1px 72px),
+    repeating-linear-gradient(0deg, rgba(37, 185, 215, 0.07) 0 1px, transparent 1px 72px);
+  content: "";
+  opacity: 0.72;
+}
+
+.subscription-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subscription-copy h2 {
+  font-size: clamp(34px, 5vw, 64px);
+}
+
+.subscription-copy p {
+  max-width: 560px;
+}
+
+.subscription-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.subscription-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.subscription-card {
+  position: relative;
+  min-height: 220px;
+  padding: 24px;
+  border: 1px solid color-mix(in srgb, var(--blue) 18%, var(--line));
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  box-shadow: 0 18px 60px rgba(25, 35, 58, 0.08);
+  overflow: hidden;
+  backdrop-filter: blur(22px);
+}
+
+.subscription-card::after {
+  position: absolute;
+  right: -44px;
+  bottom: -44px;
+  width: 140px;
+  height: 140px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 38%, transparent);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 185, 215, 0.18), transparent 62%);
+  content: "";
+}
+
+.subscription-card-primary {
+  border-color: color-mix(in srgb, var(--blue) 46%, var(--line));
+  background:
+    linear-gradient(140deg, rgba(73, 104, 243, 0.16), transparent 56%),
+    color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.subscription-card p {
+  position: relative;
+  z-index: 1;
+  font-size: 15px;
+}
+
+.subscription-card h3 {
+  position: relative;
+  z-index: 1;
+  font-size: 26px;
+}
+
+.subscription-card strong {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  margin-top: 16px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--ink) 9%, transparent);
+  color: color-mix(in srgb, var(--ink) 88%, var(--blue));
+  font-size: 13px;
+  font-weight: 900;
 }
 
 .split-section {
@@ -945,6 +1060,7 @@ p {
   .privacy-band,
   .support-card,
   .pro-band,
+  .subscription-band,
   .feature-grid,
   .faq-grid {
     grid-template-columns: 1fr;
@@ -968,6 +1084,14 @@ p {
 
   .pro-band {
     padding: 28px;
+  }
+
+  .subscription-band {
+    padding: 28px;
+  }
+
+  .subscription-grid {
+    grid-template-columns: 1fr;
   }
 
   .pro-copy {
@@ -1050,6 +1174,7 @@ p {
   .privacy-band,
   .support-section,
   .pro-band,
+  .subscription-band,
   .motion-strip,
   .feature-grid {
     width: calc(100% - 24px);
@@ -1084,6 +1209,7 @@ p {
       <a href="#library" data-i18n="nav.library">Library</a>
       <a href="#pinboards" data-i18n="nav.pinboards">Pinboards</a>
       <a href="#pro" data-i18n="nav.pro">Pro</a>
+      <a href="#subscription" data-i18n="nav.subscription">Subscription</a>
       <a href="#privacy" data-i18n="nav.privacy">Privacy</a>
       <a href="#support" data-i18n="nav.support">Support</a>
     </nav>
@@ -1220,6 +1346,44 @@ p {
       </div>
     </section>
 
+    <section class="subscription-band" id="subscription" aria-label="Subscription options" data-i18n-attrs="aria-label:subscription.aria">
+      <div class="subscription-copy reveal">
+        <p class="eyebrow" data-i18n="subscription.eyebrow">Subscription</p>
+        <h2 data-i18n="subscription.title">Choose monthly Pro or a lifetime unlock.</h2>
+        <p data-i18n="subscription.body">Adhibit is transparent before purchase: you can inspect the Library, portable panel, Pinboards, settings, privacy rules, and unlock screen without subscribing. Pro is needed when you perform capture, paste, organize, import, or sync actions.</p>
+        <div class="subscription-actions">
+          <a class="primary-action" href="https://apps.apple.com/app/id6766882201" target="_blank" rel="noopener" data-i18n="subscription.cta.appstore">Open App Store Page</a>
+          <a class="secondary-action" href="#support" data-i18n="subscription.cta.support">Ask Support</a>
+        </div>
+      </div>
+      <div class="subscription-grid reveal">
+        <article class="subscription-card subscription-card-primary">
+          <p class="price-label" data-i18n="subscription.monthly.label">Auto-renewable</p>
+          <h3 data-i18n="subscription.monthly.title">Monthly Pro</h3>
+          <p data-i18n="subscription.monthly.body">Unlock Pro features with a monthly plan. Billing, renewal, cancellation, and regional prices are handled by Apple through the App Store.</p>
+          <strong data-i18n="subscription.monthly.note">Monthly subscription</strong>
+        </article>
+        <article class="subscription-card">
+          <p class="price-label" data-i18n="subscription.lifetime.label">One-time purchase</p>
+          <h3 data-i18n="subscription.lifetime.title">Lifetime Unlock</h3>
+          <p data-i18n="subscription.lifetime.body">Pay once to unlock Pro permanently for the Apple ID that completes the purchase. Apple handles taxes and local pricing.</p>
+          <strong data-i18n="subscription.lifetime.note">$29.99 base price</strong>
+        </article>
+        <article class="subscription-card">
+          <p class="price-label" data-i18n="subscription.visible.label">Before purchase</p>
+          <h3 data-i18n="subscription.visible.title">Everything stays visible</h3>
+          <p data-i18n="subscription.visible.body">The app shows all major screens even without Pro. Locked actions explain what needs Pro instead of hiding the product.</p>
+          <strong data-i18n="subscription.visible.note">No account required</strong>
+        </article>
+        <article class="subscription-card">
+          <p class="price-label" data-i18n="subscription.manage.label">Manage access</p>
+          <h3 data-i18n="subscription.manage.title">Managed by App Store</h3>
+          <p data-i18n="subscription.manage.body">Purchases, restores, introductory offers, and promo-code redemption are completed through Apple. Adhibit does not collect payment details.</p>
+          <strong data-i18n="subscription.manage.note">Restore in app</strong>
+        </article>
+      </div>
+    </section>
+
     <section class="privacy-band" id="privacy">
       <div class="privacy-copy reveal">
         <p class="eyebrow" data-i18n="privacy.eyebrow">Local-first by default</p>
@@ -1277,6 +1441,7 @@ p {
     "nav.library": "Library",
     "nav.pinboards": "Pinboards",
     "nav.pro": "Pro",
+    "nav.subscription": "Subscription",
     "nav.privacy": "Privacy",
     "nav.support": "Support",
     "nav.appstore": "App Store",
@@ -1339,6 +1504,28 @@ p {
     "pro.visible.body": "See settings, privacy controls, support notes, and subscription options before unlocking.",
     "pro.visible.note": "No account required",
     "image.pro": "Adhibit Pro unlock screen showing subscription and lifetime options.",
+    "subscription.aria": "Subscription options",
+    "subscription.eyebrow": "Subscription",
+    "subscription.title": "Subscription and lifetime unlock.",
+    "subscription.body": "Adhibit is transparent before purchase: you can inspect the Library, portable panel, Pinboards, settings, privacy rules, and unlock screen without subscribing. Pro is needed when you perform capture, paste, organize, import, or sync actions.",
+    "subscription.cta.appstore": "Open App Store Page",
+    "subscription.cta.support": "Ask Support",
+    "subscription.monthly.label": "Auto-renewable",
+    "subscription.monthly.title": "Monthly Pro",
+    "subscription.monthly.body": "Unlock Pro features with a monthly plan. Billing, renewal, cancellation, and regional prices are handled by Apple through the App Store.",
+    "subscription.monthly.note": "Monthly subscription",
+    "subscription.lifetime.label": "One-time purchase",
+    "subscription.lifetime.title": "Lifetime Unlock",
+    "subscription.lifetime.body": "Pay once to unlock Pro permanently for the Apple ID that completes the purchase. Apple handles taxes and local pricing.",
+    "subscription.lifetime.note": "$29.99 base price",
+    "subscription.visible.label": "Before purchase",
+    "subscription.visible.title": "Everything stays visible",
+    "subscription.visible.body": "The app shows all major screens even without Pro. Locked actions explain what needs Pro instead of hiding the product.",
+    "subscription.visible.note": "No account required",
+    "subscription.manage.label": "Manage access",
+    "subscription.manage.title": "Managed by App Store",
+    "subscription.manage.body": "Purchases, restores, introductory offers, and promo-code redemption are completed through Apple. Adhibit does not collect payment details.",
+    "subscription.manage.note": "Restore in app",
     "privacy.eyebrow": "Local-first by default",
     "privacy.title": "Private clipboard tools should be understandable.",
     "privacy.body": "No account is required. Clipboard data stays on your Mac unless you enable optional sync or import features. Privacy rules and retention controls are visible in Settings.",
@@ -1366,6 +1553,7 @@ p {
     "nav.library": "资料库",
     "nav.pinboards": "Pinboard",
     "nav.pro": "Pro",
+    "nav.subscription": "订阅",
     "nav.privacy": "隐私",
     "nav.support": "支持",
     "nav.appstore": "App Store",
@@ -1428,6 +1616,28 @@ p {
     "pro.visible.body": "解锁前也可以查看设置、隐私控制、支持说明和订阅选项。",
     "pro.visible.note": "无需账户",
     "image.pro": "Adhibit Pro 解锁界面，展示订阅和终身解锁选项。",
+    "subscription.aria": "订阅选项",
+    "subscription.eyebrow": "订阅",
+    "subscription.title": "订阅与终身解锁。",
+    "subscription.body": "购买前也可以完整了解 Adhibit：资料库、便携面板、Pinboard、设置、隐私规则和解锁页面都能查看。真正执行捕获、粘贴、整理、导入或同步等操作时，需要开启 Pro。",
+    "subscription.cta.appstore": "打开 App Store 页面",
+    "subscription.cta.support": "联系支持",
+    "subscription.monthly.label": "自动续订",
+    "subscription.monthly.title": "月度 Pro",
+    "subscription.monthly.body": "按月解锁 Pro 功能。计费、续订、取消订阅和不同地区价格都由 Apple 通过 App Store 处理。",
+    "subscription.monthly.note": "月度订阅",
+    "subscription.lifetime.label": "一次性购买",
+    "subscription.lifetime.title": "终身解锁",
+    "subscription.lifetime.body": "一次购买后，为完成购买的 Apple ID 永久解锁 Pro。税费和本地价格由 Apple 处理。",
+    "subscription.lifetime.note": "$29.99 基准价",
+    "subscription.visible.label": "购买前",
+    "subscription.visible.title": "所有能力保持可见",
+    "subscription.visible.body": "即使没有 Pro，应用也会展示主要页面。被锁定的操作会说明需要 Pro，而不是把产品能力藏起来。",
+    "subscription.visible.note": "无需账户",
+    "subscription.manage.label": "管理权益",
+    "subscription.manage.title": "由 App Store 管理",
+    "subscription.manage.body": "购买、恢复购买、首发优惠和优惠码兑换都通过 Apple 完成。Adhibit 不收集支付信息。",
+    "subscription.manage.note": "应用内恢复购买",
     "privacy.eyebrow": "默认本地优先",
     "privacy.title": "私密的剪贴板工具，应该让用户看得明白。",
     "privacy.body": "无需账户即可使用。除非你主动开启可选同步或导入功能，否则剪贴板数据会保留在本机。隐私规则和保留时长控制都可以在设置中查看。",
