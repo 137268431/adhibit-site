@@ -76,14 +76,96 @@
       </div>
     </section>
 
-    <section class="split-section" id="library">
+    <section class="workspace-showcase" id="library">
       <div class="section-copy reveal">
-        <p class="eyebrow" data-i18n="library.eyebrow">Searchable memory</p>
-        <h2 data-i18n="library.title">Recover the right clip without leaving your flow.</h2>
-        <p data-i18n="library.body">Adhibit turns clipboard history into a calm, searchable library for URLs, screenshots, file references, colors, notes, and the small details that usually disappear.</p>
+        <p class="eyebrow" data-i18n="workspace.eyebrow">Live library workspace</p>
+        <h2 data-i18n="workspace.title">Search, filter, and pin every working fragment in one fast view.</h2>
+        <p data-i18n="workspace.body">The main Adhibit view puts search, source apps, Pinboards, and recent clips on one scanning surface. You can inspect the whole experience before Pro, then unlock capture, organize, and paste actions when it becomes part of your daily workflow.</p>
       </div>
-      <div class="screen-frame reveal" data-tilt>
-        <img src="assets/library.jpg" alt="All Clips library with search, filters, and clip cards." data-i18n-attrs="alt:image.library">
+      <div class="workspace-panel reveal" data-tilt aria-label="Adhibit searchable Library workspace with Pinboard filters and clip cards" data-i18n-attrs="aria-label:workspace.panelAria">
+        <div class="workspace-toolbar">
+          <div class="workspace-search">
+            <span class="search-lens" aria-hidden="true"></span>
+            <span data-i18n="workspace.search">Search clips, screenshot text, source apps, or Pinboards</span>
+          </div>
+          <span class="workspace-filter" data-i18n="workspace.filters">Filters</span>
+          <span class="workspace-add" aria-label="Create new clip or board" data-i18n-attrs="aria-label:workspace.addAria">+</span>
+        </div>
+        <div class="board-strip" aria-label="Pinboard filters" data-i18n-attrs="aria-label:workspace.boardAria">
+          <span class="board-pill active" data-i18n="workspace.allClips">All Clips</span>
+          <span class="board-pill new-board" data-i18n="workspace.newBoard">New Board</span>
+          <span class="board-pill cyan" data-i18n="workspace.board.design">Design assets</span>
+          <span class="board-pill green" data-i18n="workspace.board.research">Research</span>
+          <span class="board-pill blue" data-i18n="workspace.board.support">Support replies</span>
+          <span class="board-pill violet" data-i18n="workspace.board.links">App links</span>
+          <span class="board-pill amber" data-i18n="workspace.board.code">Code notes</span>
+        </div>
+        <div class="clip-rack" aria-label="Recent clipboard cards" data-i18n-attrs="aria-label:workspace.cardsAria">
+          <article class="clip-tile link-card active">
+            <div class="clip-top">
+              <span data-i18n="workspace.clip.link">Link</span>
+              <strong>17:32</strong>
+            </div>
+            <div class="clip-body">
+              <h3 data-i18n="workspace.card.support.title">support.adhibit.app</h3>
+              <p data-i18n="workspace.card.support.body">Subscription notes, Pro unlock options, and support details ready to reopen.</p>
+              <span class="clip-source">Safari</span>
+            </div>
+          </article>
+          <article class="clip-tile image-card">
+            <div class="clip-top">
+              <span data-i18n="workspace.clip.image">Image</span>
+              <strong>17:27</strong>
+            </div>
+            <div class="clip-body">
+              <div class="clip-preview">
+                <span class="preview-window"></span>
+              </div>
+              <h3 data-i18n="workspace.card.image.title">Window screenshot</h3>
+              <p data-i18n="workspace.card.image.body">Interface reference captured with its source context.</p>
+              <span class="clip-source">Finder</span>
+            </div>
+          </article>
+          <article class="clip-tile text-card">
+            <div class="clip-top">
+              <span data-i18n="workspace.clip.text">Text</span>
+              <strong>17:22</strong>
+            </div>
+            <div class="clip-body">
+              <h3 data-i18n="workspace.card.reply.title">Reusable reply</h3>
+              <p data-i18n="workspace.card.reply.body">Thanks for the context. I will check the issue and follow up with a precise fix.</p>
+              <span class="clip-source">Notes</span>
+            </div>
+          </article>
+          <article class="clip-tile file-card">
+            <div class="clip-top">
+              <span data-i18n="workspace.clip.file">File</span>
+              <strong>17:18</strong>
+            </div>
+            <div class="clip-body">
+              <h3 data-i18n="workspace.card.file.title">Launch checklist</h3>
+              <p data-i18n="workspace.card.file.body">Screenshots, privacy notes, review text, and release build references.</p>
+              <span class="clip-source">Xcode</span>
+            </div>
+          </article>
+          <article class="clip-tile color-card">
+            <div class="clip-top">
+              <span data-i18n="workspace.clip.color">Color</span>
+              <strong>17:11</strong>
+            </div>
+            <div class="clip-body">
+              <div class="color-swatches" aria-hidden="true">
+                <span style="--swatch: #4968f3"></span>
+                <span style="--swatch: #25b9d7"></span>
+                <span style="--swatch: #1f9d74"></span>
+                <span style="--swatch: #c4882b"></span>
+              </div>
+              <h3 data-i18n="workspace.card.color.title">Accent palette</h3>
+              <p data-i18n="workspace.card.color.body">Brand colors kept searchable beside text, links, screenshots, and files.</p>
+              <span class="clip-source">Figma</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
