@@ -70,6 +70,7 @@
         <span data-i18n="ticker.snippets">Reusable snippets</span>
         <span data-i18n="ticker.privacy">Privacy rules</span>
         <span data-i18n="ticker.pinboards">Pinboards</span>
+        <span data-i18n="ticker.yearly">Yearly Pro</span>
         <span data-i18n="ticker.monthly">Monthly Pro</span>
         <span data-i18n="ticker.lifetime">Lifetime unlock</span>
       </div>
@@ -126,11 +127,19 @@
       <div class="pricing-deck reveal" aria-label="Adhibit Pro options" data-i18n-attrs="aria-label:pro.optionsAria">
         <article class="price-card monthly">
           <div>
-            <p class="price-label" data-i18n="pro.monthly.label">Subscription</p>
-            <h3 data-i18n="pro.monthly.title">Monthly Pro</h3>
-            <p data-i18n="pro.monthly.body">Use Pro features with a renewable monthly plan. Great for trying Adhibit in a real workflow.</p>
+            <p class="price-label" data-i18n="pro.yearly.label">Recommended</p>
+            <h3 data-i18n="pro.yearly.title">Yearly Pro</h3>
+            <p data-i18n="pro.yearly.body">Best value for regular use, with a 14-day App Store free trial before yearly renewal.</p>
           </div>
-          <strong data-i18n="pro.monthly.note">Shown in App Store</strong>
+          <strong data-i18n="pro.yearly.note">$14.99/year</strong>
+        </article>
+        <article class="price-card monthly">
+          <div>
+            <p class="price-label" data-i18n="pro.monthly.label">Flexible</p>
+            <h3 data-i18n="pro.monthly.title">Monthly Pro</h3>
+            <p data-i18n="pro.monthly.body">Use Pro features month to month, also with a 14-day App Store free trial before renewal.</p>
+          </div>
+          <strong data-i18n="pro.monthly.note">$1.49/month</strong>
         </article>
         <article class="price-card lifetime">
           <div>
@@ -157,8 +166,8 @@
     <section class="subscription-band" id="subscription" aria-label="Subscription options" data-i18n-attrs="aria-label:subscription.aria">
       <div class="subscription-copy reveal">
         <p class="eyebrow" data-i18n="subscription.eyebrow">Subscription</p>
-        <h2 data-i18n="subscription.title">Choose monthly Pro or a lifetime unlock.</h2>
-        <p data-i18n="subscription.body">Adhibit is transparent before purchase: you can inspect the Library, portable panel, Pinboards, settings, privacy rules, and unlock screen without subscribing. Pro is needed when you perform capture, paste, organize, import, or sync actions.</p>
+        <h2 data-i18n="subscription.title">All Pro purchase options.</h2>
+        <p data-i18n="subscription.body">Adhibit Pro includes yearly and monthly subscriptions with a 14-day App Store free trial, plus a one-time Lifetime unlock. You can inspect the product before purchase; Pro is needed when you perform capture, paste, organize, import, or sync actions.</p>
         <div class="subscription-actions">
           <a class="primary-action" href="https://apps.apple.com/app/id6766882201" target="_blank" rel="noopener" data-i18n="subscription.cta.appstore">Open App Store Page</a>
           <a class="secondary-action" href="#support" data-i18n="subscription.cta.support">Ask Support</a>
@@ -166,16 +175,28 @@
       </div>
       <div class="subscription-grid reveal">
         <article class="subscription-card subscription-card-primary">
+          <p class="price-label" data-i18n="subscription.yearly.label">Recommended</p>
+          <h3 data-i18n="subscription.yearly.title">Yearly Pro</h3>
+          <p data-i18n="subscription.yearly.body">Annual Pro access for regular users. Includes a 14-day free trial, then renews yearly through the App Store unless cancelled.</p>
+          <strong data-i18n="subscription.yearly.note">$14.99/year</strong>
+        </article>
+        <article class="subscription-card subscription-card-primary">
           <p class="price-label" data-i18n="subscription.monthly.label">Auto-renewable</p>
           <h3 data-i18n="subscription.monthly.title">Monthly Pro</h3>
-          <p data-i18n="subscription.monthly.body">Unlock Pro features with a monthly plan. Billing, renewal, cancellation, and regional prices are handled by Apple through the App Store.</p>
-          <strong data-i18n="subscription.monthly.note">Monthly subscription</strong>
+          <p data-i18n="subscription.monthly.body">Monthly Pro access for trying Adhibit in a real workflow. Includes a 14-day free trial, then renews monthly unless cancelled.</p>
+          <strong data-i18n="subscription.monthly.note">$1.49/month</strong>
         </article>
         <article class="subscription-card">
           <p class="price-label" data-i18n="subscription.lifetime.label">One-time purchase</p>
           <h3 data-i18n="subscription.lifetime.title">Lifetime Unlock</h3>
           <p data-i18n="subscription.lifetime.body">Pay once to unlock Pro permanently for the Apple ID that completes the purchase. Apple handles taxes and local pricing.</p>
           <strong data-i18n="subscription.lifetime.note">$29.99 base price</strong>
+        </article>
+        <article class="subscription-card">
+          <p class="price-label" data-i18n="subscription.trial.label">Included with subscriptions</p>
+          <h3 data-i18n="subscription.trial.title">14-day free trial</h3>
+          <p data-i18n="subscription.trial.body">The yearly and monthly subscription plans include an App Store free trial. Lifetime is charged once and does not renew.</p>
+          <strong data-i18n="subscription.trial.note">Trial managed by Apple</strong>
         </article>
         <article class="subscription-card">
           <p class="price-label" data-i18n="subscription.visible.label">Before purchase</p>
@@ -187,7 +208,7 @@
           <p class="price-label" data-i18n="subscription.manage.label">Manage access</p>
           <h3 data-i18n="subscription.manage.title">Managed by App Store</h3>
           <p data-i18n="subscription.manage.body">Purchases, restores, introductory offers, and promo-code redemption are completed through Apple. Adhibit does not collect payment details.</p>
-          <strong data-i18n="subscription.manage.note">Restore in app</strong>
+          <strong data-i18n="subscription.manage.note">Restore and redeem in app</strong>
         </article>
       </div>
     </section>

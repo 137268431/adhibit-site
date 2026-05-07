@@ -40,6 +40,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 112px;
 }
 
 body {
@@ -56,6 +57,10 @@ body {
 img {
   display: block;
   max-width: 100%;
+}
+
+section[id] {
+  scroll-margin-top: 112px;
 }
 
 a {
@@ -716,14 +721,18 @@ p {
 
 .subscription-card::after {
   position: absolute;
-  right: -44px;
-  bottom: -44px;
-  width: 140px;
-  height: 140px;
-  border: 1px solid color-mix(in srgb, var(--cyan) 38%, transparent);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(37, 185, 215, 0.18), transparent 62%);
+  right: 18px;
+  bottom: 18px;
+  width: 128px;
+  height: 64px;
+  border-top: 1px solid color-mix(in srgb, var(--cyan) 34%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--blue) 32%, transparent);
+  background:
+    repeating-linear-gradient(90deg, rgba(37, 185, 215, 0.16) 0 1px, transparent 1px 16px),
+    linear-gradient(135deg, transparent, rgba(73, 104, 243, 0.10));
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%, 0 35%);
   content: "";
+  opacity: 0.72;
 }
 
 .subscription-card-primary {
@@ -1262,6 +1271,7 @@ p {
         <span data-i18n="ticker.snippets">Reusable snippets</span>
         <span data-i18n="ticker.privacy">Privacy rules</span>
         <span data-i18n="ticker.pinboards">Pinboards</span>
+        <span data-i18n="ticker.yearly">Yearly Pro</span>
         <span data-i18n="ticker.monthly">Monthly Pro</span>
         <span data-i18n="ticker.lifetime">Lifetime unlock</span>
       </div>
@@ -1318,11 +1328,19 @@ p {
       <div class="pricing-deck reveal" aria-label="Adhibit Pro options" data-i18n-attrs="aria-label:pro.optionsAria">
         <article class="price-card monthly">
           <div>
-            <p class="price-label" data-i18n="pro.monthly.label">Subscription</p>
-            <h3 data-i18n="pro.monthly.title">Monthly Pro</h3>
-            <p data-i18n="pro.monthly.body">Use Pro features with a renewable monthly plan. Great for trying Adhibit in a real workflow.</p>
+            <p class="price-label" data-i18n="pro.yearly.label">Recommended</p>
+            <h3 data-i18n="pro.yearly.title">Yearly Pro</h3>
+            <p data-i18n="pro.yearly.body">Best value for regular use, with a 14-day App Store free trial before yearly renewal.</p>
           </div>
-          <strong data-i18n="pro.monthly.note">Shown in App Store</strong>
+          <strong data-i18n="pro.yearly.note">$14.99/year</strong>
+        </article>
+        <article class="price-card monthly">
+          <div>
+            <p class="price-label" data-i18n="pro.monthly.label">Flexible</p>
+            <h3 data-i18n="pro.monthly.title">Monthly Pro</h3>
+            <p data-i18n="pro.monthly.body">Use Pro features month to month, also with a 14-day App Store free trial before renewal.</p>
+          </div>
+          <strong data-i18n="pro.monthly.note">$1.49/month</strong>
         </article>
         <article class="price-card lifetime">
           <div>
@@ -1349,8 +1367,8 @@ p {
     <section class="subscription-band" id="subscription" aria-label="Subscription options" data-i18n-attrs="aria-label:subscription.aria">
       <div class="subscription-copy reveal">
         <p class="eyebrow" data-i18n="subscription.eyebrow">Subscription</p>
-        <h2 data-i18n="subscription.title">Choose monthly Pro or a lifetime unlock.</h2>
-        <p data-i18n="subscription.body">Adhibit is transparent before purchase: you can inspect the Library, portable panel, Pinboards, settings, privacy rules, and unlock screen without subscribing. Pro is needed when you perform capture, paste, organize, import, or sync actions.</p>
+        <h2 data-i18n="subscription.title">All Pro purchase options.</h2>
+        <p data-i18n="subscription.body">Adhibit Pro includes yearly and monthly subscriptions with a 14-day App Store free trial, plus a one-time Lifetime unlock. You can inspect the product before purchase; Pro is needed when you perform capture, paste, organize, import, or sync actions.</p>
         <div class="subscription-actions">
           <a class="primary-action" href="https://apps.apple.com/app/id6766882201" target="_blank" rel="noopener" data-i18n="subscription.cta.appstore">Open App Store Page</a>
           <a class="secondary-action" href="#support" data-i18n="subscription.cta.support">Ask Support</a>
@@ -1358,16 +1376,28 @@ p {
       </div>
       <div class="subscription-grid reveal">
         <article class="subscription-card subscription-card-primary">
+          <p class="price-label" data-i18n="subscription.yearly.label">Recommended</p>
+          <h3 data-i18n="subscription.yearly.title">Yearly Pro</h3>
+          <p data-i18n="subscription.yearly.body">Annual Pro access for regular users. Includes a 14-day free trial, then renews yearly through the App Store unless cancelled.</p>
+          <strong data-i18n="subscription.yearly.note">$14.99/year</strong>
+        </article>
+        <article class="subscription-card subscription-card-primary">
           <p class="price-label" data-i18n="subscription.monthly.label">Auto-renewable</p>
           <h3 data-i18n="subscription.monthly.title">Monthly Pro</h3>
-          <p data-i18n="subscription.monthly.body">Unlock Pro features with a monthly plan. Billing, renewal, cancellation, and regional prices are handled by Apple through the App Store.</p>
-          <strong data-i18n="subscription.monthly.note">Monthly subscription</strong>
+          <p data-i18n="subscription.monthly.body">Monthly Pro access for trying Adhibit in a real workflow. Includes a 14-day free trial, then renews monthly unless cancelled.</p>
+          <strong data-i18n="subscription.monthly.note">$1.49/month</strong>
         </article>
         <article class="subscription-card">
           <p class="price-label" data-i18n="subscription.lifetime.label">One-time purchase</p>
           <h3 data-i18n="subscription.lifetime.title">Lifetime Unlock</h3>
           <p data-i18n="subscription.lifetime.body">Pay once to unlock Pro permanently for the Apple ID that completes the purchase. Apple handles taxes and local pricing.</p>
           <strong data-i18n="subscription.lifetime.note">$29.99 base price</strong>
+        </article>
+        <article class="subscription-card">
+          <p class="price-label" data-i18n="subscription.trial.label">Included with subscriptions</p>
+          <h3 data-i18n="subscription.trial.title">14-day free trial</h3>
+          <p data-i18n="subscription.trial.body">The yearly and monthly subscription plans include an App Store free trial. Lifetime is charged once and does not renew.</p>
+          <strong data-i18n="subscription.trial.note">Trial managed by Apple</strong>
         </article>
         <article class="subscription-card">
           <p class="price-label" data-i18n="subscription.visible.label">Before purchase</p>
@@ -1379,7 +1409,7 @@ p {
           <p class="price-label" data-i18n="subscription.manage.label">Manage access</p>
           <h3 data-i18n="subscription.manage.title">Managed by App Store</h3>
           <p data-i18n="subscription.manage.body">Purchases, restores, introductory offers, and promo-code redemption are completed through Apple. Adhibit does not collect payment details.</p>
-          <strong data-i18n="subscription.manage.note">Restore in app</strong>
+          <strong data-i18n="subscription.manage.note">Restore and redeem in app</strong>
         </article>
       </div>
     </section>
@@ -1467,6 +1497,7 @@ p {
     "ticker.snippets": "Reusable snippets",
     "ticker.privacy": "Privacy rules",
     "ticker.pinboards": "Pinboards",
+    "ticker.yearly": "Yearly Pro",
     "ticker.monthly": "Monthly Pro",
     "ticker.lifetime": "Lifetime unlock",
     "library.eyebrow": "Searchable history",
@@ -1488,13 +1519,17 @@ p {
     "image.settings": "Adhibit Settings showing capture and privacy configuration.",
     "pro.eyebrow": "Adhibit Pro",
     "pro.title": "Browse everything. Unlock power when you are ready.",
-    "pro.body": "Adhibit keeps the full product visible without a subscription: library, portable panel, Pinboards, privacy rules, settings, and the unlock screen all remain explorable. Pro is required when you use capture, paste, organize, import, or sync actions.",
+    "pro.body": "Adhibit keeps the full product visible without a subscription: library, portable panel, Pinboards, privacy rules, settings, and the unlock screen all remain explorable. Choose yearly, monthly, or Lifetime when you are ready to use capture, paste, organize, import, or sync actions.",
     "pro.cta": "Open App Store Page",
     "pro.optionsAria": "Adhibit Pro options",
-    "pro.monthly.label": "Subscription",
+    "pro.yearly.label": "Recommended",
+    "pro.yearly.title": "Yearly Pro",
+    "pro.yearly.body": "Best value for regular use, with a 14-day App Store free trial before yearly renewal.",
+    "pro.yearly.note": "$14.99/year",
+    "pro.monthly.label": "Flexible",
     "pro.monthly.title": "Monthly Pro",
-    "pro.monthly.body": "Use Pro features with a renewable monthly plan. Great for trying Adhibit in a real workflow.",
-    "pro.monthly.note": "Shown in App Store",
+    "pro.monthly.body": "Use Pro features month to month, also with a 14-day App Store free trial before renewal.",
+    "pro.monthly.note": "$1.49/month",
     "pro.lifetime.label": "One-time unlock",
     "pro.lifetime.title": "Lifetime",
     "pro.lifetime.body": "Pay once to unlock Pro permanently on your Apple ID, with regional pricing handled by Apple.",
@@ -1506,18 +1541,26 @@ p {
     "image.pro": "Adhibit Pro unlock screen showing subscription and lifetime options.",
     "subscription.aria": "Subscription options",
     "subscription.eyebrow": "Subscription",
-    "subscription.title": "Subscription and lifetime unlock.",
-    "subscription.body": "Adhibit is transparent before purchase: you can inspect the Library, portable panel, Pinboards, settings, privacy rules, and unlock screen without subscribing. Pro is needed when you perform capture, paste, organize, import, or sync actions.",
+    "subscription.title": "All Pro purchase options.",
+    "subscription.body": "Adhibit Pro includes yearly and monthly subscriptions with a 14-day App Store free trial, plus a one-time Lifetime unlock. You can inspect the product before purchase; Pro is needed when you perform capture, paste, organize, import, or sync actions.",
     "subscription.cta.appstore": "Open App Store Page",
     "subscription.cta.support": "Ask Support",
+    "subscription.yearly.label": "Recommended",
+    "subscription.yearly.title": "Yearly Pro",
+    "subscription.yearly.body": "Annual Pro access for regular users. Includes a 14-day free trial, then renews yearly through the App Store unless cancelled.",
+    "subscription.yearly.note": "$14.99/year",
     "subscription.monthly.label": "Auto-renewable",
     "subscription.monthly.title": "Monthly Pro",
-    "subscription.monthly.body": "Unlock Pro features with a monthly plan. Billing, renewal, cancellation, and regional prices are handled by Apple through the App Store.",
-    "subscription.monthly.note": "Monthly subscription",
+    "subscription.monthly.body": "Monthly Pro access for trying Adhibit in a real workflow. Includes a 14-day free trial, then renews monthly unless cancelled.",
+    "subscription.monthly.note": "$1.49/month",
     "subscription.lifetime.label": "One-time purchase",
     "subscription.lifetime.title": "Lifetime Unlock",
     "subscription.lifetime.body": "Pay once to unlock Pro permanently for the Apple ID that completes the purchase. Apple handles taxes and local pricing.",
     "subscription.lifetime.note": "$29.99 base price",
+    "subscription.trial.label": "Included with subscriptions",
+    "subscription.trial.title": "14-day free trial",
+    "subscription.trial.body": "The yearly and monthly subscription plans include an App Store free trial. Lifetime is charged once and does not renew.",
+    "subscription.trial.note": "Trial managed by Apple",
     "subscription.visible.label": "Before purchase",
     "subscription.visible.title": "Everything stays visible",
     "subscription.visible.body": "The app shows all major screens even without Pro. Locked actions explain what needs Pro instead of hiding the product.",
@@ -1525,7 +1568,7 @@ p {
     "subscription.manage.label": "Manage access",
     "subscription.manage.title": "Managed by App Store",
     "subscription.manage.body": "Purchases, restores, introductory offers, and promo-code redemption are completed through Apple. Adhibit does not collect payment details.",
-    "subscription.manage.note": "Restore in app",
+    "subscription.manage.note": "Restore and redeem in app",
     "privacy.eyebrow": "Local-first by default",
     "privacy.title": "Private clipboard tools should be understandable.",
     "privacy.body": "No account is required. Clipboard data stays on your Mac unless you enable optional sync or import features. Privacy rules and retention controls are visible in Settings.",
@@ -1579,6 +1622,7 @@ p {
     "ticker.snippets": "常用片段",
     "ticker.privacy": "隐私规则",
     "ticker.pinboards": "Pinboard",
+    "ticker.yearly": "年付 Pro",
     "ticker.monthly": "月度 Pro",
     "ticker.lifetime": "终身解锁",
     "library.eyebrow": "可搜索历史",
@@ -1600,13 +1644,17 @@ p {
     "image.settings": "Adhibit 设置界面展示捕获和隐私配置。",
     "pro.eyebrow": "Adhibit Pro",
     "pro.title": "所有功能先看得到，需要时再解锁高级能力。",
-    "pro.body": "即使没有订阅，Adhibit 也会完整展示产品能力：资料库、便携面板、Pinboard、隐私规则、设置和解锁页面都可以查看。真正执行捕获、粘贴、整理、导入或同步等高级操作时，需要开启 Pro。",
+    "pro.body": "即使没有订阅，Adhibit 也会完整展示产品能力：资料库、便携面板、Pinboard、隐私规则、设置和解锁页面都可以查看。准备真正使用捕获、粘贴、整理、导入或同步等高级操作时，可以选择年付、月付或终身解锁。",
     "pro.cta": "打开 App Store 页面",
     "pro.optionsAria": "Adhibit Pro 选项",
-    "pro.monthly.label": "订阅",
+    "pro.yearly.label": "推荐",
+    "pro.yearly.title": "年付 Pro",
+    "pro.yearly.body": "适合长期使用，包含 App Store 14 天免费试用，之后按年续订。",
+    "pro.yearly.note": "$14.99/年",
+    "pro.monthly.label": "灵活",
     "pro.monthly.title": "月度 Pro",
-    "pro.monthly.body": "通过按月续订使用 Pro 功能，适合先在真实工作流里试用 Adhibit。",
-    "pro.monthly.note": "App Store 内显示",
+    "pro.monthly.body": "适合先在真实工作流里试用，也包含 App Store 14 天免费试用，之后按月续订。",
+    "pro.monthly.note": "$1.49/月",
     "pro.lifetime.label": "一次性解锁",
     "pro.lifetime.title": "终身解锁",
     "pro.lifetime.body": "一次购买后，在你的 Apple ID 下永久解锁 Pro。不同地区价格由 Apple 自动处理。",
@@ -1618,18 +1666,26 @@ p {
     "image.pro": "Adhibit Pro 解锁界面，展示订阅和终身解锁选项。",
     "subscription.aria": "订阅选项",
     "subscription.eyebrow": "订阅",
-    "subscription.title": "订阅与终身解锁。",
-    "subscription.body": "购买前也可以完整了解 Adhibit：资料库、便携面板、Pinboard、设置、隐私规则和解锁页面都能查看。真正执行捕获、粘贴、整理、导入或同步等操作时，需要开启 Pro。",
+    "subscription.title": "完整 Pro 购买选项。",
+    "subscription.body": "Adhibit Pro 包含年付和月付两个自动续订方案，均提供 App Store 14 天免费试用，也提供一次性终身解锁。购买前可以完整了解产品；真正执行捕获、粘贴、整理、导入或同步等操作时，需要开启 Pro。",
     "subscription.cta.appstore": "打开 App Store 页面",
     "subscription.cta.support": "联系支持",
+    "subscription.yearly.label": "推荐",
+    "subscription.yearly.title": "年付 Pro",
+    "subscription.yearly.body": "适合长期使用的 Pro 访问权限。包含 14 天免费试用，之后通过 App Store 按年续订，除非取消。",
+    "subscription.yearly.note": "$14.99/年",
     "subscription.monthly.label": "自动续订",
     "subscription.monthly.title": "月度 Pro",
-    "subscription.monthly.body": "按月解锁 Pro 功能。计费、续订、取消订阅和不同地区价格都由 Apple 通过 App Store 处理。",
-    "subscription.monthly.note": "月度订阅",
+    "subscription.monthly.body": "适合先在真实工作流里试用 Adhibit。包含 14 天免费试用，之后按月续订，除非取消。",
+    "subscription.monthly.note": "$1.49/月",
     "subscription.lifetime.label": "一次性购买",
     "subscription.lifetime.title": "终身解锁",
     "subscription.lifetime.body": "一次购买后，为完成购买的 Apple ID 永久解锁 Pro。税费和本地价格由 Apple 处理。",
     "subscription.lifetime.note": "$29.99 基准价",
+    "subscription.trial.label": "订阅包含",
+    "subscription.trial.title": "14 天免费试用",
+    "subscription.trial.body": "年付和月付订阅方案都包含 App Store 免费试用。终身解锁为一次性购买，不会自动续费。",
+    "subscription.trial.note": "试用由 Apple 管理",
     "subscription.visible.label": "购买前",
     "subscription.visible.title": "所有能力保持可见",
     "subscription.visible.body": "即使没有 Pro，应用也会展示主要页面。被锁定的操作会说明需要 Pro，而不是把产品能力藏起来。",
@@ -1637,7 +1693,7 @@ p {
     "subscription.manage.label": "管理权益",
     "subscription.manage.title": "由 App Store 管理",
     "subscription.manage.body": "购买、恢复购买、首发优惠和优惠码兑换都通过 Apple 完成。Adhibit 不收集支付信息。",
-    "subscription.manage.note": "应用内恢复购买",
+    "subscription.manage.note": "应用内恢复和兑换",
     "privacy.eyebrow": "默认本地优先",
     "privacy.title": "私密的剪贴板工具，应该让用户看得明白。",
     "privacy.body": "无需账户即可使用。除非你主动开启可选同步或导入功能，否则剪贴板数据会保留在本机。隐私规则和保留时长控制都可以在设置中查看。",

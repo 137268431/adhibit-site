@@ -33,6 +33,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 112px;
 }
 
 body {
@@ -49,6 +50,10 @@ body {
 img {
   display: block;
   max-width: 100%;
+}
+
+section[id] {
+  scroll-margin-top: 112px;
 }
 
 a {
@@ -709,14 +714,18 @@ p {
 
 .subscription-card::after {
   position: absolute;
-  right: -44px;
-  bottom: -44px;
-  width: 140px;
-  height: 140px;
-  border: 1px solid color-mix(in srgb, var(--cyan) 38%, transparent);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(37, 185, 215, 0.18), transparent 62%);
+  right: 18px;
+  bottom: 18px;
+  width: 128px;
+  height: 64px;
+  border-top: 1px solid color-mix(in srgb, var(--cyan) 34%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--blue) 32%, transparent);
+  background:
+    repeating-linear-gradient(90deg, rgba(37, 185, 215, 0.16) 0 1px, transparent 1px 16px),
+    linear-gradient(135deg, transparent, rgba(73, 104, 243, 0.10));
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%, 0 35%);
   content: "";
+  opacity: 0.72;
 }
 
 .subscription-card-primary {
